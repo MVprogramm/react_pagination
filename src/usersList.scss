@@ -14,10 +14,5 @@
   padding: 8px;
   cursor: pointer;
   background-color: green;
-
-  &:disabled {
-    background-color: grey;
-    cursor: auto;
-  }
 }
 
