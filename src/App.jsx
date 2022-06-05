@@ -29,7 +29,7 @@ const users = [
 
 
 const App = () => {
-  return <UsersList users={users} itemsPerPage={1}/>
+  return <UsersList users={users} itemsPerPage={3}/>
 }
 
 export default App;
