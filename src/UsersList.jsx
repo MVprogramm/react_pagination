@@ -12,27 +12,27 @@ class UsersList extends React.Component {
 
   goPrev = () => {
     this.setState({
-      curruntPage: this.state.currentPage - 1
+      currentPage: this.state.currentPage - 1
     })
   }
 
   goNext = () => {
     this.setState({
-      curruntPage: this.state.currentPage + 1
-    })
+      currentPage: this.state.currentPage + 1
+    });
   }
 
   render() {
     const totalItems = this.props.users.length;
     const startItem = (this.state.currentPage - 1) * this.props.itemsPerPage;
-    const endItem = startItem + this.props.itemsPerPage + 1;
+    const endItem = startItem + this.props.itemsPerPage;
     const usersList= this.props.users.slice(startItem, endItem);
    
     return (
       <div>
         <Pagination 
-          goPrev={goPrev}
-          goNext={goNext}
+          goPrev={this.goPrev}
+          goNext={this.goNext}
           currentPage={this.state.currentPage}
           totalItems={totalItems}
           itemsPerPage={this.props.itemsPerPage}

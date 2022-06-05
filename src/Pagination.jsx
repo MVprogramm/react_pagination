@@ -1,5 +1,4 @@
 import React from 'react';
-import { ProgressPlugin } from 'webpack';
 
 import './pagination.scss';
 
@@ -23,21 +22,21 @@ const Pagination = ({
   currentPage === endPage
     ? isNextPageAvailable = false
     : isNextPageAvailable = true;
-  
+
   return (
     <div className="pagination">
       <button 
         className="btn"
-        onClick={goNext}
-        disabled={isPrevPageAvailable}
+        onClick={goPrev}
+        disabled={!isPrevPageAvailable}
       >
         { isPrevPageAvailable && '←' }
       </button>
       <span className="pagination__page">{ currentPage }</span>
       <button 
         className="btn"
-        onClick={goPrev}
-        disabled={isNextPageAvailable}
+        onClick={goNext}
+        disabled={!isNextPageAvailable}
       >
         { isNextPageAvailable && '→' }
       </button>
